@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вирішення завдання 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Завдання 1</h1>
+    <button onclick="goToMain()">Повернутися до вибору завдання</button>
+    <script>
+        function goToMain() {
+            window.location.href = "main.html";
+        }
+    </script>
+    <main>
+        <h1>Розв'язання рівняння</h1>
+        <p>Введіть коефіцієнти a, b та c для квадратного рівняння ax² + bx + c = 0:</p>
+        <input type="number" id="a" placeholder="Коефіцієнт a"><br>
+        <input type="number" id="b" placeholder="Коефіцієнт b"><br>
+        <input type="number" id="c" placeholder="Коефіцієнт c"><br>
+        <button onclick="solveEquation()">Розв'язати</button>
+        <p id="result"></p>
+    </main>
+    <footer>
+        <p>© 2024. Усі права захищено</p>
+    </footer>
+
+    <script>
+        function solveEquation() {
+            let a = parseFloat(document.getElementById('a').value);
+            let b = parseFloat(document.getElementById('b').value);
+            let c = parseFloat(document.getElementById('c').value);
+
+            let roots;
+
+            if (a !== 0) {
+                roots = solveQuadraticEquation(a, b, c);
+            } else {
+                roots = solveLinearEquation(b, c);
+            }
+
+            let resultElement = document.getElementById('result');
+            resultElement.textContent = 'Корені рівняння: ' + roots;
+        }
+
+        function solveLinearEquation(a, b) {
+            if (a === 0) {
+                if (b === 0) {
+                    return 'Рівняння має безліч розв\'язків';
+                } else {
+                    return 'Рівняння не має розв\'язків';
+                }
+            } else {
+                return -b / a;
+            }
+        }
+
+        function solveQuadraticEquation(a, b, c) {
+            if (a === 0) {
+                return solveLinearEquation(b, c);
+            }
+            
+            let discriminant = b * b - 4 * a * c;
+            
+            if (discriminant > 0) {
+                let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                return [root1, root2];
+            } else if (discrimin === 0) {
+                let root = -b / (2 * a);
+                return root;
+            } else {
+                return 'Рівняння не має дійсних коренів';
+            }
+        }
+    </script>
+</body>
+</html>

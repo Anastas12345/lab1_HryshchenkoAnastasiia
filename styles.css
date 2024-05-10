@@ -1,0 +1,110 @@
+/* Основні стилі для сайту */
+body {
+    font-family: 'Roboto', sans-serif; /* Стильний шрифт */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e6f7ff, #b3e0ff); /* Градієнтний фон */
+    color: #333;
+    min-height: 100vh; /* Повна висота вікна */
+    display: flex;
+    flex-direction: column; /* Розташування блоків у вертикальній осі */
+}
+
+/* Навігаційна панель */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 15px 20px; /* Збільшений відступ */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Додаємо тінь */
+}
+
+#navbar a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px; /* Закруглені краї */
+    transition: background-color 0.3s; /* Плавний перехід при наведенні */
+}
+
+#navbar a:hover {
+    background-color: #ddd; /* Трохи темніше при наведенні */
+}
+
+/* Інформація про розробника */
+#developerInfo {
+    display: none;
+    position: absolute;
+    top: 55px; /* Відкриваємо під "Головна" */
+    left: 10%; /* Підкориговано розташування */
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: white;
+    padding: 15px; /* Збільшений відступ */
+    border: 1px solid #060202; /* Чорний колір */
+    border-radius: 10px; /* Закруглені краї */
+    text-align: center; /* Центрування тексту */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Додаємо тінь */
+}
+
+#developerInfo img {
+    max-width: 100%; /* Обмеження за розміром */
+    height: auto;
+    border-radius: 50%; /* Кругла форма зображення */
+}
+
+#developerInfo p {
+    margin: 0; /* Видалення зайвого відступу */
+    padding: 5px 0; /* Внутрішній відступ */
+}
+
+/* Основний вміст */
+main {
+    flex-grow: 1;
+    padding: 20px; /* Відступи для основного вмісту */
+    background-color: white;
+    border-radius: 10px; /* Закруглені краї */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Тінь */
+    margin: 20px; /* Відступи навколо основного вмісту */
+    max-width: 800px; /* Обмеження ширини */
+    margin: auto; /* Центрування основного вмісту */
+}
+
+/* Футер */
+footer {
+    background-color: #66a2ca; /* Синій колір */
+    color: white; /* Білий текст */
+    text-align: center; /* Центрування тексту */
+    padding: 15px 0; /* Відступ у футері */
+}
+
+/* Стилі для форм */
+input, select, button {
+    padding: 10px; /* Внутрішній відступ */
+    border-radius: 5px; /* Закруглені краї */
+    border: 1px solid #ccc; /* Світло-сірий */
+    transition: border-color 0.3s; /* Плавний перехід при фокусі */
+}
+
+input:focus, select:focus {
+    border-color: #66a2ca; /* Синій колір при фокусі */
+}
+
+button {
+    background-color: #66a2ca; /* Синій колір */
+    color: white; /* Білий текст */
+    border-radius: 5px; /* Закруглені краї */
+    transition: background-color 0.3s; /* Плавний перехід */
+}
+
+button:hover {
+    background-color: #005f99; /* Трохи темніше при наведенні */
+}
+
+/* Дизайн тексту */
+p {
+    margin: 10px 0; /* Відступи між абзацами */
+    line-height: 1.5; /* Збільшений міжрядковий інтервал */
+}

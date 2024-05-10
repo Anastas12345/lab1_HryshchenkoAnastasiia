@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вітання з сайтом</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar">
+        <span id="mainText">Головна</span>
+        <a href="main1.html">Завдання 1</a>
+        <a href="main2.html">Завдання 2</a>
+        <a href="main3.html">Завдання 3</a>
+        <div id="developerInfo">
+            <img src="images/developer.jpg" alt="Фото розробника" style="max-width: 100%;">
+            <p>Ім'я: Анастасія</p>
+            <p>Посада: Веб-розробник</p>
+        </div>
+    </div>
+    <main>
+        <h1>Доброго дня! Вітаю Вас на своєму сайті.</h1>
+        <p>Давайте оберемо, яке завдання ми будемо сьогодні вирішувати:</p>
+        <select id="taskSelect">
+            <option value="main1.html">Вирішення коренів</option>
+            <option value="main2.html">Додавання суми</option>
+            <option value="main3.html">Вирішення квадратного кореня</option>
+        </select>
+        <button onclick="selectTask()">Обрати завдання</button>
+        <div id="taskResult"></div>
+    </main>
+    <footer>
+        <p>© 2024. Усі права захищено</p>
+    </footer>
+
+    <script>
+        var mainText = document.getElementById('mainText');
+        var developerInfo = document.getElementById('developerInfo');
+
+        // Додаємо обробник події для наведення на текст "main"
+        mainText.addEventListener('mouseover', function() {
+            developerInfo.style.display = 'block';
+        });
+
+        // Додаємо обробник події для відведення миші від тексту "main"
+        mainText.addEventListener('mouseout', function() {
+            developerInfo.style.display = 'none';
+        });
+
+        // Додаємо обробник події для наведення на блок інформації про розробника
+        developerInfo.addEventListener('mouseover', function() {
+            developerInfo.style.display = 'block';
+        });
+
+        // Додаємо обробник події для відведення миші від блоку інформації про розробника
+        developerInfo.addEventListener('mouseout', function() {
+            developerInfo.style.display = 'none';
+        });
+
+        // Функція для обробки вибору завдання
+        function selectTask() {
+            var selectElement = document.getElementById('taskSelect');
+            var selectedTask = selectElement.value;
+            window.location.href = selectedTask; // Перенаправляємо на вибрану сторінку
+        }
+    </script>
+
+    <script>
+        function selectTask() {
+            let selectElement = document.getElementById('taskSelect');
+            let selectedTask = selectElement.value;
+            let resultElement = document.getElementById('taskResult');
+
+            switch (selectedTask) {
+                case 'main1.html':
+                    window.location.href = selectedTask;
+                    break;
+                case 'main2.html':
+                    window.location.href = selectedTask;
+                    break;
+                case 'main3.html':
+                    window.location.href = selectedTask;
+                    break;
+                default:
+                    resultElement.textContent = "Невідоме завдання";
+            }
+        }
+    </script>
+</body>
+</html>

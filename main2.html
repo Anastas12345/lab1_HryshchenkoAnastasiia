@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вирішення завдання 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<>
+    <h1>Завдання 2</h1>
+    <button onclick="goToMain()">Повернутися до вибору завдання</button>
+    <script>
+        function goToMain() {
+            window.location.href = "main.html";
+        }
+    </script>
+    <main>
+    <h1>Підрахунок кількості кожного значення</h1>
+    <p>Введіть набір чисел, розділених комою (,):</p>
+    <input type="text" id="numbersInput" placeholder="Введіть числа"><br>
+    <button onclick="countOccurrences()">Підрахувати</button>
+    <div id="result"></div>
+    </main>
+    <footer>
+        <p>© 2024. Усі права захищено</p>
+    </footer>
+    <script>
+        function countOccurrences() {
+            let numbersInput = document.getElementById('numbersInput').value;
+            let numbersArray = numbersInput.split(',').map(Number); // Розбиваємо рядок на масив чисел
+
+            let occurrences = {};
+
+            // Підраховуємо кількість кожного числа у масиві
+            numbersArray.forEach(function(number) {
+                occurrences[number] = (occurrences[number] || 0) + 1;
+            });
+
+            let resultElement = document.getElementById('result');
+            resultElement.innerHTML = '<h2>Результат:</h2>';
+
+            // Виводимо кількість кожного числа
+            for (let number in occurrences) {
+                resultElement.innerHTML += '<p>' + number + ' - ' + occurrences[number] + ' разів</p>';
+            }
+        }
+    </script>
+</body>
+</html>

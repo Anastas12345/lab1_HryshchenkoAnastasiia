@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знаходження найдовшого слова</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Завдання 3</h1>
+    <button onclick="goToMain()">Повернутися до вибору завдання</button>
+    <script>
+        function goToMain() {
+            window.location.href = "main.html";
+        }
+    </script>
+    <main>
+    <h1>Знаходження найдовшого слова</h1>
+    <p>Введіть рядок тексту:</p>
+    <input type="text" id="textInput" placeholder="Введіть текст"><br>
+    <button onclick="findLongestWord()">Знайти найдовше слово</button>
+    <div id="result"></div>
+    </main>
+    <footer>
+        <p>© 2024. Усі права захищено</p>
+    </footer>
+    <script>
+        function findLongestWord() {
+            let textInput = document.getElementById('textInput').value;
+            let wordsArray = textInput.split(' ');
+
+            let longestWord = '';
+            let maxLength = 0;
+
+            // Знаходимо найдовше слово та його довжину
+            wordsArray.forEach(function(word) {
+                if (word.length > maxLength) {
+                    longestWord = word;
+                    maxLength = word.length;
+                }
+            });
+
+            let resultElement = document.getElementById('result');
+            resultElement.innerHTML = '<h2>Найдовше слово:</h2>';
+            resultElement.innerHTML += '<p>' + longestWord + ' (довжина ' + maxLength + ' символів)</p>';
+        }
+    </script>
+    
+</body>
+</html>
